@@ -1,0 +1,28 @@
+<h2 class="content-block">Municípios</h2>
+
+<dx-data-grid
+    class="dx-card wide-card"
+    [dataSource]="dataSource"
+    [showBorders]="true"
+    [focusedRowEnabled]="true"
+    [focusedRowIndex]="0"
+    [columnAutoWidth]="true"
+    [paging]="{pageSize: 10}"
+    [pager]="{ showPageSizeSelector: true, allowedPageSizes: [ 30, 40, 50 ], showInfo: true}">
+
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+    <dxi-column dataField="id" caption="Id" alignment="left"></dxi-column>
+
+    <dxi-column dataField="nome"  caption="nome"></dxi-column>
+
+    <dxi-column dataField="microrregiao.nome"  caption="Microrregião"></dxi-column>
+
+    <dxi-column dataField="microrregiao.mesorregiao.nome"  caption="Mesorregião"></dxi-column>
+
+    <dxi-column dataField="microrregiao.mesorregiao.UF.sigla" caption="UF"></dxi-column>
+
+    <dxi-column dataField="microrregiao.mesorregiao.UF.nome"  caption="Nome UF"></dxi-column>
+
+    <dxi-column dataField="microrregiao.mesorregiao.UF.regiao.nome" caption="regiao"></dxi-column>
+</dx-data-grid>
